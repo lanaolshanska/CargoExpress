@@ -1,0 +1,17 @@
+﻿@using System.Collections.Generic
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CargoExpress</title>
+</head>
+<body>
+    <div>
+        @Html.Action("Navigation", "Navigation", new { area = "" })
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+</body>
+</html>

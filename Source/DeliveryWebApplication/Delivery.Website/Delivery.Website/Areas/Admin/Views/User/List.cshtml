@@ -1,0 +1,43 @@
+﻿@using PagedList.Mvc;
+﻿@model PagedList.IPagedList<Delivery.Models.User>
+ 
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure you want to delete this user - " + item.Username + "?');" })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("List", new { page }))
+</div>

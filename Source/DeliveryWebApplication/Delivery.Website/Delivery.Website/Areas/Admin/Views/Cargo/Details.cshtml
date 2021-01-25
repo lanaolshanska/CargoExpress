@@ -1,0 +1,69 @@
+﻿@model Delivery.Models.Cargo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight) (kg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume) (m<sup>3</sup>)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.Sender.FirstName + " " + Model.Sender.LastName, "Details", "Contact", new { id = Model.SenderContactId }, new { })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.Recipient.FirstName + " " + Model.Recipient.LastName, "Details", "Contact", new { id = Model.RecipientContactId }, new { })
+        </dd>
+
+        @if (Model.DriverId != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Driver)
+            </dt>
+
+            <dd>
+                @Html.ActionLink(Model.Driver.FirstName + " " + Model.Driver.LastName, "Details", "Driver", new { id = Model.DriverId }, new { })
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

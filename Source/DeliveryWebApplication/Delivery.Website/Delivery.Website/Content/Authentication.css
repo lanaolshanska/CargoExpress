@@ -1,0 +1,93 @@
+﻿@font-face {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'Abel', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.driver{
+    margin-bottom: 15px;
+}
+
+body {
+    background: #FBFBFB;
+    font-size: 22px;
+}
+
+h1 {
+    font-family: Abel;
+    font-size: 26px;
+}
+
+h2 {
+    color: #584D9A;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 20px 10px;
+}
+
+a {
+    font-family: Josefin Sans;
+    font-weight: 800;
+    color: #40396c;
+}
+
+p {
+    font-size: 18px;
+}
+
+    p.addition {
+        font-size: 18px;
+        margin-bottom: 5%;
+    }
+
+.button {
+    margin-top: 10px;
+    background: #584D9A;
+    color: white;
+    width: 20%;
+}
+
+.checkbox {
+    font-size: 17px;
+    margin: 5px 0 15px 0;
+}
+
+.container {
+    width: 40%;
+}
+
+.logo {
+    padding-top: 4%;
+    width: 100%
+}
+
+.inner {
+    display: table;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 18px;
+}
+
+.input.reg::placeholder {
+    color: #656565;
+}
+
+.errmessage {
+    font-size: 16px;
+    color: #9f0000;
+}
+
+    .errmessage.summary {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }

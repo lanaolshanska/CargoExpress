@@ -1,0 +1,56 @@
+﻿@using Delivery.Models
+@model IEnumerable<Delivery.Models.Cargo>
+
+@{
+    ViewBag.Title = "DriverCargos";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+
+<h2>My Cargoes to deliver</h2>
+<table class="table">
+    <tr>
+        <th>
+            Departure city
+        </th>
+        <th>
+            Destination city
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Route.Distance) (km)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight) (kg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volume) (m<sup>3</sup>)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Status == CargoStatus.PickedUp)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Route.OrigWarehouse.City, "Details", "Warehouse", new { area = "Admin", id = item.Route.OriginWarehouseId }, new { })
+            </td>
+            <td>
+                @Html.ActionLink(item.Route.DestWarehouse.City, "Details", "Warehouse", new { area = "Admin", id = item.Route.OriginWarehouseId }, new { })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Route.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.ActionLink("Done", "Complete", new { cargoId = item.Id }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+        }
+    }
+</table>

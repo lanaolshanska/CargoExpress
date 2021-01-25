@@ -1,0 +1,8 @@
+.data-table{
+	width: 75%;
+	margin: auto;
+}
+
+.table-striped tbody tr.active{
+	background-color: #bacfff;
+}

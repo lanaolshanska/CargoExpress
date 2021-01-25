@@ -1,0 +1,63 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Delivery.Models.Driver>
+
+@using Delivery.Website.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+    ViewBag.Title = "List";
+}
+
+<div style="float:right;padding-bottom:10px;"><button value="trter">@Html.ActionLink("Generate Report", "Report")</button></div>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.ActionLink("First name", "List", new { page = ViewBag.LastPageNumber, paramName = "Name", isAsc = ViewBag.Order, enableSwitch = true })
+        </th>
+        <th>
+            @Html.ActionLink("Last name", "List", new { page = ViewBag.LastPageNumber, paramName = "LastName", isAsc = ViewBag.Order, enableSwitch = true })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TripsTotal)
+        </th>
+        <th>
+            @Html.ActionLink("Status", "List", new { page = ViewBag.LastPageNumber, paramName = "Status", isAsc = ViewBag.Order, enableSwitch = true })
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.Image(item.Id, "70px", "100px")
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CellPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripsTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("List", new { page, paramName = ViewBag.LastParameter, isAsc = ViewBag.Order }))
+</div>
+

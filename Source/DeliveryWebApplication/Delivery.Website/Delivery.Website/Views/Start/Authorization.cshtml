@@ -1,0 +1,75 @@
+﻿@model Delivery.Website.Areas.Admin.Models.LoginModel
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css")
+    @Scripts.Render("https://use.fontawesome.com/releases/v5.0.7/js/all.js")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Abel")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Josefin+Sans:600,700")
+    @Styles.Render("~/Content/Authentication.css")
+</head>
+<body>
+    <div class="logo">
+        <div class="inner">
+            <figure class="image is-128x128">
+                <img src="~/Images/logo.jpg">
+            </figure>
+            <h1>CargoExpress</h1>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <form>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "errmessage summary" })
+                <p>Email</p>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input", placeholder = "Enter your Email" } })
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "errmessage" })
+                </div>
+                <p>Password</p>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input", placeholder = "Enter your password" } })
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "errmessage" })
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input type="submit" value="Sign In" class="button" />
+                    </p>
+                </div>
+                <hr>
+                <p class="addition">
+                    Don't have an account?
+                    @Html.ActionLink("Sign Up", "Registration", new { @class = "a" })
+                </p>
+                <p>
+                    @Html.ActionLink("Check out our API", "RedirectToApi", new { @class = "a" })
+                </p>
+            </form>
+        </div>
+    }
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

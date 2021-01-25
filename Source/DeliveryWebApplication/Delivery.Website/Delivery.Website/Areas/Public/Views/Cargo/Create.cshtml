@@ -1,0 +1,67 @@
+﻿@model Delivery.Website.Areas.Public.Models.OrderModel
+@using Delivery.Website.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+
+@Styles.Render("~/Content/customNavCss")
+@Scripts.Render("~/bundles/tabs")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal" id="orderForm">
+        <h4>Create new Order</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="tab">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control inputField", type = "number" } })
+                    <p class="errmessage"> Enter cargo weight </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Volume, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Volume, new { htmlAttributes = new { @class = "form-control inputField", type = "number" } })
+                    <p class="errmessage"> Enter cargo volume </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab">
+            <label>
+                From:
+            </label>
+            @Html.PartialFor(model => Model.Sender, "CargoContact");
+            @Html.PartialFor(model => Model.OrigPlace, "CargoPlace");
+        </div>
+
+        <div class="tab">
+            <label>
+                To:
+            </label>
+            @Html.PartialFor(model => Model.Recipient, "CargoContact");
+            @Html.PartialFor(model => Model.DestPlace, "CargoPlace");
+        </div>
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <div class="btn btn-secondary" id="prevBtn" onclick="nextPrev(-1)">Previous</div>
+                <div class="btn btn-success" id="nextBtn" onclick="nextPrev(1)">Next</div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </div>
+}

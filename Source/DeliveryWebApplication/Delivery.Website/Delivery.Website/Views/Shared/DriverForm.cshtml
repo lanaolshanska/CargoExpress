@@ -1,0 +1,51 @@
+﻿@model Delivery.Website.Areas.Admin.Models.RegisterModel
+@using (Html.BeginForm())
+{
+    <h2>• Please, fill in this form, so we can register you as driver</h2>
+    <div class="form-horizontal driver">
+        @*@Html.ValidationSummary(true, "", new { @class = "errmessage summary" })
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "errmessage" })*@
+        <div class="field">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your first name" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your last name" } })
+        </div>
+
+        @*@Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "input reg datepicker", placeholder = "Pick your birthdate", type = "text", onfocus = "(this.type = 'date')" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.CellPhone, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.CellPhone, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your cellphone" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your address" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.StartedDrivingYear, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.StartedDrivingYear, new { htmlAttributes = new { @class = "input reg datepicker", placeholder = "Enter year when you've started to drive", type = "text", onfocus = "(this.type = 'date')" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.TripsTotal, "", new { @class = "errmessage" })
+        <div class="field">
+            @Html.EditorFor(model => model.TripsTotal, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter total count of trips you've made", type = "number", min = "0" } })
+        </div>
+
+        @Html.ValidationMessageFor(model => model.HasCriminalRecord, "", new { @class = "errmessage" })
+        <div class="field">
+            <label class="checkbox">
+                @Html.CheckBoxFor(model => model.HasCriminalRecord)
+                Do you have any criminal records?
+            </label>*@
+        @*</div>*@
+    </div>
+}
+

@@ -1,0 +1,99 @@
+﻿﻿@model Delivery.Website.Areas.Admin.Models.RegisterModel
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    @*<meta charset="utf-8" />*@
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css")
+    @Scripts.Render("https://use.fontawesome.com/releases/v5.0.7/js/all.js")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Abel")
+    @Styles.Render("https://fonts.googleapis.com/css?family=Josefin+Sans:600,700")
+    @Styles.Render("~/Content/Authentication.css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/registration")
+</head>
+<body>
+    <div class="logo">
+        <div class="inner">
+            <figure class="image is-96x96" style="margin-left:15px;">
+                <img src="~/Images/logo.jpg">
+            </figure>
+            <h1>CargoExpress</h1>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container">
+            <form>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "errmessage summary" })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "errmessage" })
+                <div class="field">
+                    <p class="control has-icons-left">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your username" } })
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                </div>
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "errmessage" })
+                <div class="field">
+                    <p class="control has-icons-left">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your email" } })
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "errmessage" })
+                <div class="field">
+                    <p class="control has-icons-left">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input reg", placeholder = "Enter your password" } })
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "errmessage" })
+                <div class="field">
+                    <p class="control">
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "input reg", placeholder = "Confirm your password" } })
+                    </p>
+                </div>
+                <div class="field">
+                    <label class="checkbox adminCheck">
+                        @Html.CheckBoxFor(model => model.IsAdmin, new { @class = "adminCheck", @id = "adminCheckBox" })
+                        Create Admin account
+                    </label>
+                </div>
+                <div class="field">
+                    <label class="checkbox driverCheck">
+                        @Html.CheckBoxFor(model => model.IsDriver, new { @class = "driverCheck", @id = "driverCheckBox" })
+                        Register as Driver
+                    </label>
+                </div>
+                <div id="driverForm" hidden>
+                    @{Html.RenderPartial("DriverForm"); }
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input type="submit" value="Sign Up" class="button" />
+                    </p>
+                </div>
+                <hr>
+                <p class="addition">
+                    Already have an account?
+                    @Html.ActionLink("Sign In", "Authorization", new { @class = "a" })
+                </p>
+            </form>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@font-face {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'Abel', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: #FBFBFB;
+}
+
+.navbar {
+    background: #443c74;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: Abel;
+    color: #FBFBFB;
+}
+    .navbar-brand:hover {
+        color: #FBFBFB;
+    }
+
+.navbar-header {
+    margin-right: 2% !important;
+}
+
+ul.nav a {
+    font-family: Abel !important;
+    font-size: 18px;
+    color: #FBFBFB;
+}
+
+ul.nav a:hover {
+    background-color: #584D9A !important;
+    color: #FBFBFB !important;
+}
+
+ul.nav a:focus-within {
+    background-color: #584D9A !important;
+    color: #FBFBFB !important;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+.searchButton {
+    height: 34px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+ul.dropdown-menu {
+    background-color: #584D9A;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+    ul.dropdown-menu a {
+        color: #FBFBFB;
+        font-size: 16px;
+    }
+
+        ul.dropdown-menu a:hover {
+            background-color: #3c3564 !important;
+        }

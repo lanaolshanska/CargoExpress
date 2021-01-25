@@ -1,0 +1,6 @@
+﻿
+CREATE PROCEDURE spGetAllRoutes
+AS
+BEGIN
+	SELECT * FROM Route
+END;

@@ -1,0 +1,115 @@
+﻿@using Delivery.Models;
+@using Delivery.Website.Helpers;
+@model Driver
+
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+@Styles.Render("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700")
+@Styles.Render("~/Content/bootstrap.min.css")
+@Styles.Render("~/Content/customFormCss")
+
+<h4>My Profile</h4>
+
+<div>
+    <hr />
+    <div style="float:left;width:40%;">
+        @Html.Image(Model.Id, "250px", "350px")
+    </div>
+    <div style="float:left;width:60%;">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Birthdate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CellPhone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CellPhone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StartedDrivingYear)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartedDrivingYear)
+            </dd>
+
+            @if (Model.Status == DriverStatus.Approved)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.TripsTotal)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TripsTotal)
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasCriminalRecord)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HasCriminalRecord)
+            </dd>
+
+            @if (Model.Status != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+            }
+        </dl>
+
+        @if (Model.Status != DriverStatus.Waiting)
+        {
+            using (Html.BeginForm("Info", "Driver", new { id = Model.Id }, FormMethod.Post, new { onsubmit = " var confirmed = confirm('Are you sure you want to send this profile to confirm?'); if(confirmed){alert('Your profile was sent'); return confirmed;}" }))
+            {
+        <div class="form-inline buttons">
+            @if (Model.Status == null)
+            {
+                <button type="submit" class="btn btn-success">Sent</button>
+            }
+            @Html.ActionLink("Edit", "Edit", null, new { @class = "btn btn-warning" })
+        </div>
+            }
+        }
+    </div>
+</div>

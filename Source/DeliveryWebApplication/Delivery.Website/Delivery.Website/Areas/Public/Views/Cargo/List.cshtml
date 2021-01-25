@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Delivery.Models.Cargo>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+}
+
+<h2>My orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Departure city
+        </th>
+        <th>
+            Destination city
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Route.Distance) (km)
+        </th>
+        <th>
+            Recipient
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight) (kg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volume) (m<sup>3</sup>)
+        </th>
+        <th>
+            @Html.ActionLink("Status", "List", new { paramName = "Status", isAsc = ViewBag.Order, enableSwitch = true })
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Route.OrigWarehouse.City, "Details", "Warehouse", new { area = "Admin", id = item.Route.OriginWarehouseId }, new { })
+            </td>
+            <td>
+                @Html.ActionLink(item.Route.DestWarehouse.City, "Details", "Warehouse", new { area = "Admin", id = item.Route.DestinationWarehouseId }, new { })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Route.Distance)
+            </td>
+            <td>
+                @Html.ActionLink(item.Recipient.FirstName + " " + item.Recipient.LastName, "Details", "Contact", new { area = "Admin", id = item.RecipientContactId }, new { })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

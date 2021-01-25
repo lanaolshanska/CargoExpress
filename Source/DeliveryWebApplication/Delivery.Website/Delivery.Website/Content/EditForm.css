@@ -1,0 +1,54 @@
+﻿@font-face {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+    background: #FBFBFB;
+    font-size: 22px;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.form-horizontal .control-label {
+    text-align: left !important;
+}
+
+.checkbox-label {
+    margin-right: 20px;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+.btn.edit {
+    margin-right: 10px;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Abel';
+    font-size: 28px;
+}
+
+label {
+    font-family: 'Maven Pro';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+check-box {
+    margin-right: 100px;
+}
+
+.errmessage {
+    font-size: 16px;
+    color: #9f0000;
+}
+
+    .errmessage.summary {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }

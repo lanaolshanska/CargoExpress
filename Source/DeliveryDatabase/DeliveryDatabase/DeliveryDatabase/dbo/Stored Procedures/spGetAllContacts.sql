@@ -1,0 +1,6 @@
+﻿
+CREATE PROCEDURE spGetAllContacts
+AS
+BEGIN
+	SELECT * FROM Contact
+END;

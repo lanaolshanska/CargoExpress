@@ -1,0 +1,21 @@
+<h2 style="text-align: center">Warehouse list</h2>
+<div class="data-table">
+	<create-form [warehouses]="warehouses"></create-form>
+	<edit-form [warehouses]="warehouses" [selectedId]="selectedId" [selectedRow] = "selectedRow"></edit-form>
+	<table id="datatable" mdbTable striped="true">
+		<thead>
+			<tr class="table-secondary">
+				<th *ngFor="let head of headers" scope="col"><strong> {{ head }} </strong></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr mdbTableCol *ngFor="let item of warehouses; let i = index" (click)="selectRow(i, item.id)" [class.active]="i==selectedRow">
+				<td> {{ i + 1 }} </td>
+				<td> {{ item.state }} </td>
+				<td> {{ item.city }} </td>
+				<td> {{ item.phone }} </td>
+				<td> {{ item.postcode }} </td>
+			</tr>
+		</tbody>
+	</table>
+</div>

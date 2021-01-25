@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_NavigationLayout.cshtml";
+    ViewBag.Title = "Error";
+}
+<br />
+<br />
+<div class="list-header clearfix">
+    <span>Error</span>
+</div>
+<div class="list-sfs-holder">
+    <div class="alert alert-error">
+        An error has occurred. Please contact the system administrator.
+    </div>
+    <div>
+        <p>
+            <b>Exception:</b> @ViewData["Exception"]<br />
+            <b>Controller:</b>  @ViewData["Controller"]<br />
+            <b>Action: </b>  @ViewData["Action"]
+        </p>
+    </div>
+</div>
+

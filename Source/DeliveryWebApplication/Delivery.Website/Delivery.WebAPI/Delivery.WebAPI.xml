@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Delivery.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Delivery.WebAPI.Controllers.AccountController.GetToken(System.String,System.String)">
+            <summary>
+            Get token by email and password
+            </summary>
+            <param name="email">User email</param>
+            <param name="password">User password</param>
+            <returns></returns>
+            <remarks>Get token by email and password</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.CargoController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.CargoFilterByEnum},System.Nullable{Delivery.Utils.Enum.CargoSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of cargos
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field</param>
+            <param name="sortBy">A sorting field. If not specifies sort by status</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of cargos</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.CargoController.Get(System.Int32)">
+            <summary>
+            Get cargo by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get cargo by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.CargoController.Create(Delivery.Models.DTO.AddCargoModel)">
+            <summary>
+            Create new cargo
+            </summary>
+            <param name="item">New cargo to create</param>
+            <returns></returns>
+            <remarks>Create new cargo</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.CargoController.Update(System.Int32,Delivery.Models.DTO.UpdateCargoModel)">
+            <summary>
+            Update cargo
+            </summary>
+            <param name="id">Id of cargo to update</param>
+            <param name="item">Updated cargo</param>
+            <returns></returns>
+            <remarks>Update cargo</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.CargoController.Delete(System.Int32)">
+            <summary>
+            Delete cargo
+            </summary>
+            <param name="id">Id of cargo to delete</param>
+            <returns></returns>
+            <remarks>Delete cargo</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.ContactFilterByEnum},System.Nullable{Delivery.Utils.Enum.ContactSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of contacts
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field</param>
+            <param name="sortBy">A sorting field. If not specifies sort by first name</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of contacts</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.Get(System.Int32)">
+            <summary>
+            Get Contact by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get Contact by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.GetByUserId(System.Int32)">
+            <summary>
+            Get contact by user id
+            </summary>
+            <param name="id">Returns contact with specified user id</param>
+            <returns></returns>
+            <remarks>Get contact by user id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.Create(Delivery.Models.DTO.AddContactModel)">
+            <summary>
+            Create new contact
+            </summary>
+            <param name="item">New contact to create</param>
+            <returns></returns>
+            <remarks>Create new contact</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.Update(System.Int32,Delivery.Models.DTO.UpdateContactModel)">
+            <summary>
+            Update contact
+            </summary>
+            <param name="id">Id of contact to update</param>
+            <param name="item">Updated contact</param>
+            <returns></returns>
+            <remarks>Update contact</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.ContactController.Delete(System.Int32)">
+            <summary>
+            Delete contact
+            </summary>
+            <param name="id">Id of contact to delete</param>
+            <returns></returns>
+            <remarks>Delete contact</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.DriverFilterByEnum},System.Nullable{Delivery.Utils.Enum.DriverSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of drivers
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field</param>
+            <param name="sortBy">A sorting field. If not specifies sort by status</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of drivers</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.Get(System.Int32)">
+            <summary>
+            Get driver by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get driver by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.GetByUserId(System.Int32)">
+            <summary>
+            Get driver by user id
+            </summary>
+            <param name="id">Returns driver with specified user id</param>
+            <returns></returns>
+            <remarks>Get driver by user id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.Create(Delivery.Models.DTO.AddDriverModel)">
+            <summary>
+            Create new driver
+            </summary>
+            <param name="item">New driver to create</param>
+            <returns></returns>
+            <remarks>Create new driver</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.Update(System.Int32,Delivery.Models.DTO.UpdateDriverModel)">
+            <summary>
+            Update driver
+            </summary>
+            <param name="id">Id of driver to update</param>
+            <param name="item">Updated driver</param>
+            <returns></returns>
+            <remarks>Update driver</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.DriverController.Delete(System.Int32)">
+            <summary>
+            Delete driver
+            </summary>
+            <param name="id">Id of driver to delete</param>
+            <returns></returns>
+            <remarks>Delete driver</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.RouteController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.RouteFilterByEnum},System.Nullable{Delivery.Utils.Enum.RouteSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of routes
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field</param>
+            <param name="sortBy">A sorting field. If not specifies sort by id</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of routes</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.RouteController.Get(System.Int32)">
+            <summary>
+            Get route by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get route by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.RouteController.GetByWarehousesId(System.Int32,System.Int32)">
+            <summary>
+            Get route id by warehouses id
+            </summary>
+            <param name="origId">Origin warehouse id</param>
+            <param name="destId">Destination warehouse id</param>
+            <returns></returns>
+            <remarks>Get route id by warehouses id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.UserController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.UserFilterByEnum},System.Nullable{Delivery.Utils.Enum.UserSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of users
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field</param>
+            <param name="sortBy">A sorting field. If not specifies sort by role</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of users</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Get user by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get user by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.UserController.Create(Delivery.Models.DTO.AddUserModel)">
+            <summary>
+            Create new user
+            </summary>
+            <param name="item">New user to create</param>
+            <returns></returns>
+            <remarks>Create new user</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.UserController.Update(System.Int32,Delivery.Models.DTO.UpdateUserModel)">
+            <summary>
+            Update user
+            </summary>
+            <param name="id">Id of user to update</param>
+            <param name="item">Updated user</param>
+            <returns></returns>
+            <remarks>Update user</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Delete user
+            </summary>
+            <param name="id">Id of user to delete</param>
+            <returns></returns>
+            <remarks>Delete user</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.GetAsync(System.String,System.Nullable{Delivery.Utils.Enum.WarehouseFields},System.Nullable{Delivery.Utils.Enum.WarehouseSortByEnum},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get list of warehouses
+            </summary>
+            <param name="query">A searching field. Returns items containing specified query</param>
+            <param name="filterField">A filtering field. Filters items by specified value</param>
+            <param name="sortBy">A sorting field. If not specifies sort by state</param>
+            <param name="take">A number of items to be returned</param>
+            <param name="skip">A number of items to skip</param>
+            <returns></returns>
+            <remarks>Get list of warehouses</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.GetField(Delivery.Utils.Enum.WarehouseFields)">
+            <summary>
+            Get values of selected field
+            </summary>
+            <param name="field">Name of item field to return. If not specified returns state</param>
+            <returns></returns>
+            <remarks>Get values of selected field</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.Get(System.Int32)">
+            <summary>
+            Get warehouse by id
+            </summary>
+            <param name="id">Id of item to return</param>
+            <returns></returns>
+            <remarks>Get warehouse by id</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.Create(Delivery.Models.DTO.AddWarehouseModel)">
+            <summary>
+            Create new warehouse entity
+            </summary>
+            <param name="item">New warehouse to create</param>
+            <returns></returns>
+            <remarks>Create new warehouse entity</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.Update(System.Int32,Delivery.Models.DTO.UpdateWarehouseModel)">
+            <summary>
+            Update warehouse entity
+            </summary>
+            <param name="id">Id of warehouse to update</param>
+            <param name="item">Updated warehouse</param>
+            <returns></returns>
+            <remarks>Update warehouse entity</remarks>
+        </member>
+        <member name="M:Delivery.WebAPI.Controllers.WarehouseController.Delete(System.Int32)">
+            <summary>
+            Delete warehouse entity
+            </summary>
+            <param name="id">Id of warehouse to delete</param>
+            <returns></returns>
+            <remarks>Delete warehouse entity</remarks>
+        </member>
+    </members>
+</doc>
